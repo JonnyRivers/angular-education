@@ -1,12 +1,35 @@
 <!-- https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML -->
 
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <title>My test page</title>
+    <meta name="author" content="Jonny Rivers">
+    <meta name="description" content="The MDN Web Docs Learning Area aims to provide
+                                      complete beginners to the Web with all they need to know to get
+                                      started with developing web sites and applications.">
+
+    <!-- Open Graph Data is a metadata protocol that Facebook invented to provide richer metadata for websites. -->
+    <!-- One effect of this is that when you link to MDN Web Docs on facebook, the link appears along with an image and description: a richer experience for users. -->
+    <meta property="og:image" content="https://developer.mozilla.org/static/img/opengraph-logo.png">
+    <meta property="og:description" content="The Mozilla Developer Network (MDN) provides
+                                             information about Open Web technologies including HTML, CSS, and APIs for both Web sites
+                                             and HTML5 Apps. It also documents Mozilla products, like Firefox OS.">
+    <meta property="og:title" content="Mozilla Developer Network">
+
+    <!-- Twitter also has its own similar proprietary metadata called Twitter Cards, which has a similar effect when the site's URL is displayed on twitter.com -->
+    <meta name="twitter:title" content="Mozilla Developer Network">
+
+    <title>&lt;title&gt; element</title>
+
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="02-head.css">
+
+    <script src="02-head.js" defer></script>
+
   </head>
   <body>
-    <p>This is my page</p>
+    <h1>&lt;h1&gt; element</h1>
+    <p>Japanese example: <span lang="ja">ご飯が熱い。</span>.</p>
   </body>
 </html>
