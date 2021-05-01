@@ -1,0 +1,37 @@
+<!-- https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure#non-semantic_wrappers -->
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Jonny Rivers">
+
+    <title>My page title</title>
+    <link rel="stylesheet" href="non-semanitc-wrappers.css">
+    <link rel="shortcut icon" href="../favicon.png" type="image/png">
+
+  </head>
+  <body>
+    <!-- span is an inline non-semantic element, which you should only use if you can't think of a 
+         better semantic text element to wrap your content, or don't want to add any specific meaning. -->
+    <p>The King walked drunkenly back to his room at 01:00, the beer doing nothing to aid
+    him as he staggered through the door <span class="editor-note">[Editor's note: At this point in the
+    play, the lights should be down low]</span>.</p>
+
+    <!-- <div> is a block level non-semantic element, which you should only use if you can't think of 
+         a better semantic block element to use, or don't want to add any specific meaning -->
+    <div class="shopping-cart">
+    <h2>Shopping cart</h2>
+    <ul>
+      <li>
+        <p><a href=""><strong>Silver earrings</strong></a>: $99.95.</p>
+        <img src="earrings.png" alt="Silver earrings">
+      </li>
+      <li>
+        ...
+      </li>
+    </ul>
+    <p>Total cost: $237.89</p>
+  </div>
+  </body>
+</html>
