@@ -1,0 +1,75 @@
+/* Changing the default behavior of elements */
+/* ***************************************** */
+
+h1 {
+    color: red;
+}
+
+p, li {
+    color: green;
+}
+
+/* change the bullet type for a list item */
+li {
+    list-style-type: square;
+}
+
+/* Adding a class */
+/* ************** */
+
+/* set the style for the custom class 'special' */
+/* .special {
+    color: orange;
+    font-weight: bold;
+} */
+
+/* set the style for the custom class 'special', but only within a list item */
+/* li.special {
+    color: orange;
+    font-weight: bold;
+} */
+
+/* set the style for the custom class 'special', but only within a list item or a span */
+li.special,
+span.special {
+    color: orange;
+    font-weight: bold;
+}
+
+/* Styling things based on their location in a document */
+/* **************************************************** */
+
+/* set the style for the em elements, but only when they are witin a li element */
+li em {
+    color: rebeccapurple;
+}
+
+/* set the style for p elements but only if the succeed a n h1 element */
+h1 + p {
+    font-size: 200%;
+}
+
+/* Styling things based on state */
+/*********************************/
+
+a:link {
+    color: pink;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Getting a bit carried away now */
+/**********************************/
+
+/* This will style any element with a class of special, which is inside a <p>, which comes just after an <h1>, which is inside a <body>. */
+body h1 + p .special {
+    color: yellow;
+    background-color: black;
+    padding: 5px;
+}
