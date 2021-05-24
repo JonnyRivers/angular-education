@@ -35,3 +35,11 @@ p {
   background-repeat: repeat-x;
   background-attachment: fixed;
 }
+
+/* CSS is constantly developing.
+   To support this, 'invalid' statements are simply ignored.
+   In the example below, a browser with no support for calc() will take the first definition */
+.box {
+  width: 500px;
+  width: calc(100% - 50px);
+}
