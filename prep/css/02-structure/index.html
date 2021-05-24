@@ -1,0 +1,68 @@
+<!-- https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_is_structured -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My CSS experiments</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* h1 is a selector */
+        h1 { /* this is a CSS Declaration Block */
+            color: blue; /* this is a declaration; color is the property, blue is the value */
+            background-color: yellow;
+        }
+
+        /* Specificity and Cascade */
+
+        /* the color of a p element with class special is going to be red, because the SPECIFICITY rule means the most specific rule wins */
+        .special {
+            color: red;
+        }
+
+        p {
+            color: red;
+        }
+
+        /* the color of a p element is going to be blue, because the CASCADE rule means the last rule encountered wins */
+        p {
+            color: blue;
+        }
+
+        /* Functions */
+
+        .outer {
+            border: 5px solid black;
+        }
+
+        .box {
+            padding: 10px;
+            width: calc(90% - 30px); /* calc() is a function */
+            background-color: rebeccapurple;
+            color: white;
+        }
+
+        .rotated-box {
+            margin: 30px;
+            width: 100px;
+            height: 100px;
+            background-color: rebeccapurple;
+            transform: rotate(0.8turn);
+        }
+    </style>
+  </head>
+  <body>
+
+    <!-- Specificity -->
+    <p class="special">I am red</p>
+
+    <!-- Cascade -->
+    <p>I am blue</p>
+
+    <!-- Functions -->
+    <div class="outer"><div class="box">The inner box is 90% - 30px.</div></div>
+
+    <div class="rotated-box"></div>
+
+  </body>
+</html>
