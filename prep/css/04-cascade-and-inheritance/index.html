@@ -1,0 +1,47 @@
+<!-- https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance -->
+
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Cascade and inheritance</title>
+    <style>
+      body {
+        background-color: #fff;
+        color: #333;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 1em; /* em is 1 font size (literally ephemeral unit?) */
+        margin: 0;
+      }
+
+      /* The cascade */
+      /* when two rules apply that have equal specificity the one that comes last in the CSS is the one that will be used */
+      h1 { 
+        color: red; 
+      }
+      h1 { 
+        color: blue; 
+      }
+
+      /* Specificity */
+      /* the class selector gives its rule a higher specificity, 
+         and so it will be applied even though the rule with the element selector appears further down in the source order */
+      .main-heading { 
+        color: red; 
+      }
+            
+      h1 { 
+        color: blue; 
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <h1>Cascade</h1>
+    <h1 class="main-heading">Specificity</h1>
+
+  </body>
+
+</html>
