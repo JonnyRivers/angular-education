@@ -1,0 +1,58 @@
+<!-- https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance -->
+
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Cascade and inheritance</title>
+    <style>
+      /* Controlling inheritance */
+      body {
+        color: green;
+      }
+                
+      .my-class-1 a {
+        color: inherit; /* Sets the property value applied to a selected element to be the same as that of its parent element. */
+      }
+                
+      .my-class-2 a {
+        color: initial; /* Sets the property value applied to a selected element to the initial value of that property. */
+      }
+                
+      .my-class-3 a {
+        color: unset; /* Resets the property to its natural value, which means that if the property is naturally inherited it acts like inherit, otherwise it acts like initial. */
+      }
+
+      /* Resetting all property values */
+      blockquote {
+        background-color: red;
+        border: 2px solid green;
+      }
+              
+      .fix-this {
+        all: unset; /* unset all properties */
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <ul>
+      <li>Default <a href="#">link</a> color</li>
+      <li class="my-class-1">Inherit the <a href="#">link</a> color</li>
+      <li class="my-class-2">Reset the <a href="#">link</a> color</li>
+      <li class="my-class-3">Unset the <a href="#">link</a> color</li>
+    </ul>
+
+    <blockquote>
+      <p>This blockquote is styled</p>
+    </blockquote>
+
+    <blockquote class="fix-this">
+      <p>This blockquote is not styled</p>
+    </blockquote>
+
+  </body>
+
+</html>

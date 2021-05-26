@@ -1,0 +1,87 @@
+<!-- https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance -->
+
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Cascade and inheritance</title>
+    <style>
+      /* Importance */
+
+      /* Very roughly we have:
+         thousands - Inline sytles (e.g. <p style="color: red;">hello</p>)
+         hundreds - ID selector (e.g. <p id="fred"> & #fred { color: red })
+         tens - Class & attribute selector (e.g. <p class="reddish"> & .reddish { color: red })
+         units - Element selector (e.g. <p> & p { color: red }) */
+
+      
+      /* specificity: 0101 (ID & element)*/
+      #outer a {
+          background-color: red;
+      }
+              
+      /* specificity: 0201 (2 x ID & element)*/
+      #outer #inner a {
+          background-color: blue;
+      }
+
+      /* specificity: 0104 (ID & 4 x element)*/
+      #outer div ul li a {
+          color: yellow;
+      }
+
+      /* specificity: 0113 (ID & class & 3 x element) */
+      #outer div ul .nav a {
+          color: white;
+      }
+
+      /* specificity: 0024 (2 x attribute & 4 x element) */
+      div div li:nth-child(2) a:hover {
+          border: 10px solid black;
+      }
+
+      /* specificity: 0023 (2 x attribute & 3 x element) */
+      div li:nth-child(2) a:hover {
+          border: 10px dashed black;
+      }
+
+      /* specificity: 0033 (1 x class + 2 x attribute & 3 x element)*/
+      div div .nav:nth-child(2) a:hover {
+          border: 10px double black;
+      }
+
+      a {
+          display: inline-block;
+          line-height: 40px;
+          font-size: 20px;
+          text-decoration: none;
+          text-align: center;
+          width: 200px;
+          margin-bottom: 10px;
+      }
+
+      ul {
+          padding: 0;
+      }
+
+      li {
+          list-style-type: none;
+      }            
+    </style>
+  </head>
+
+  <body>
+
+    <div id="outer" class="container">
+      <div id="inner" class="container">
+          <ul>
+              <li class="nav"><a href="#">One</a></li>
+              <li class="nav"><a href="#">Two</a></li>
+          </ul>
+      </div>
+    </div> 
+
+  </body>
+
+</html>
