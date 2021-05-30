@@ -1,0 +1,44 @@
+<!-- https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model -->
+
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>The box model</title>
+    <style>
+      p, 
+      ul {
+        border: 2px solid rebeccapurple;
+        padding: .5em;
+      }
+
+      .block,
+      li {
+        border: 2px solid blue;
+        padding: .5em;
+      }
+
+      ul {
+        display: flex;
+        list-style: none;
+      }
+
+      .block {
+        display: block;
+      }  
+    </style>
+  </head>
+
+  <body>
+    <p>I am a paragraph. A short one.</p>
+    <ul> <!-- inner display is set to flex, <li> elements flow horizontally -->
+      <li>Item One</li>
+      <li>Item Two</li>
+      <li>Item Three</li>
+    </ul>
+    <!-- here we use the block class to force the first span's outer display to block, causing it to appear on a newline-->
+    <p>I am another paragraph. Some of the <span class="block">words</span> have been wrapped in a <span>span element</span>.</p>
+  </body>
+
+</html>

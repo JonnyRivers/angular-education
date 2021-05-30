@@ -1,0 +1,48 @@
+<!-- https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model -->
+
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>The box model</title>
+    <style>
+      p, 
+      ul {
+        border: 2px solid rebeccapurple;
+      }
+
+      span,
+      li {
+        border: 2px solid blue;
+      }
+
+      ul {
+        display: inline-flex;
+        list-style: none;
+        padding: 0;
+      } 
+
+      .inline {
+        display: inline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>
+        I am a paragraph. Some of the
+        <span>words</span> have been wrapped in a
+        <span>span element</span>.
+    </p>     
+    <ul> <!-- the <ul> is inline-flex, so there is no newline after it **and** the elements inside flow horizontally-->
+      <li>Item One</li>
+      <li>Item Two</li>
+      <li>Item Three</li>
+    </ul>
+    <!-- here we use the inline class to force the first <p> elements' outer display to inline, causing them to not be broken by newlines-->
+    <p class="inline">I am a paragraph. A short one.</p>
+    <p class="inline">I am another paragraph. Also a short one.</p>
+  </body>
+
+</html>
