@@ -1,0 +1,174 @@
+<!-- https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors -->
+
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Selectors</title>
+    <style>
+      h1 {
+        color: blue;
+      }
+
+      .special {
+        color: blue;
+      } 
+
+      /* these can be combines as follows */
+      h1, .special {
+        color: blue;
+      }
+
+      /* type selector */
+      h1 { 
+        color: blue; 
+      } 
+
+      /* class selector */
+      .box { 
+        color: blue; 
+      } 
+
+      /* class selectors for specific element types */
+      span.highlight {
+        background-color: yellow;
+      }
+
+      h1.highlight {
+        background-color: pink;
+      }
+
+      /* selectors for class combinations */
+      /* useful when we want to style combinations, but not in isolation */
+      .notebox {
+        border: 4px solid #666;
+        padding: .5em;
+      }
+
+      .notebox.warning { /* warning alsone does nothing */
+        border-color: orange;
+        font-weight: bold;
+      }
+
+      .notebox.danger {
+        border-color: red;
+        font-weight: bold;
+      }
+
+      /* id selector */
+      #unique { 
+        color: blue; 
+      }
+
+      /* id selector for specific types of element */
+      h1#heading {
+        color: rebeccapurple;
+      }
+
+      /* attribute selectors */
+
+      /* select a tags with the title attribute */
+      a[title] { color: red; }
+
+      /* select a tags with the title attribute */
+      a[href="https://example.com"] { color: yellow; }
+
+      /* select p tags with special in its space-separated list of classes */
+      p[class~="special"] { color: black; }
+
+      /* selects div tags with lang set to zh or zh- */
+      div[lang|="zh"] { color: black; }
+
+      /* selects li tags with class beginning box- */
+      li[class^="box-"] { color: black; }
+
+      /* selects li tags with class ending -box */
+      li[class$="-box"] { color: black; }
+
+      /* selects li tags with class containing box anywhere in the string */
+      li[class*="box"] { color: black; }
+
+      /* psuedo-classes */
+
+      a:hover { color: purple; }
+
+      /* selects the first <p> chile in an <article> */
+      article p:first-child {
+        font-size: 120%;
+        font-weight: bold;
+      }   
+
+      /* pseudo-elements */
+      p::first-line { color: grey; }
+
+      /* combining pseudo-classes and pseudo-elements */
+      article p:first-child::first-line {
+        font-size: 120%;
+        font-weight: bold;
+      }
+
+      /* combinators */
+
+      /* select a elements that are direct descendents of article elements */
+      article > a {color: yellowgreen; }
+
+      /* select <p> elements that have directly adjacent <h1> siblings */
+      h1 + p {
+        font-weight: bold;
+        background-color: #333;
+        color: #fff;
+        padding: .5em;
+      }  
+
+      /* select <p> elements that have <h1> siblings */
+      h1 ~ p {
+        font-weight: bold;
+        background-color: #333;
+        color: #fff;
+        padding: .5em;
+      } 
+
+      /* using combinators & attribute selectors */
+      ul > li[class="a"]  { color: black; }
+    </style>
+  </head>
+
+  <body>
+
+    <p><a href="https://google.com">A link with no title</a></p>
+
+    <p><a href="https://google.com" title="fred">A link with a title</a></p>
+
+    <p></p><a href="https://example.com">A link with to a specific site</a></p>
+
+    <p>
+      Jonny is grate.<br>
+      No he isn't.
+    </p>
+
+    <article>
+      <a>Jonny is the best.</a>
+    </article>
+
+    <a>Jonny is not the best.</a>
+
+    <div class="notebox">
+      This is an informational note.
+    </div>
+    
+    <div class="notebox warning">
+        This note shows a warning.
+    </div>
+    
+    <div class="notebox danger">
+        This note shows danger!
+    </div>
+    
+    <div class="danger">
+        This won't get styled — it also needs to have the notebox class
+    </div>
+
+  </body>
+
+</html>
